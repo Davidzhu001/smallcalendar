@@ -1,0 +1,25 @@
+.row
+  .col-md-9
+    #calendar
+      #idates
+        #month
+          = link_to "<", date: @date.prev_month
+          = @date.strftime("%B %Y")
+          = link_to ">", date: @date.next_month
+        = calendar @date do |date|
+          = date.day
+          - if @idates.between(date)
+              - @idates.dating(date).each do |idate|
+                p
+                  = link_to idate.title, idate
+        br
+  .col-md-3
+    br
+    hr
+      = link_to "New", new_idate_path, class: "ui button red"
+      .well
+        br
+        H3 My schedule
+        .ul
+          -current_user.idates.each do |idate|
+            .li =link_to idate.title

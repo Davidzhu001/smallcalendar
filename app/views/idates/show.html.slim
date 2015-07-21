@@ -1,0 +1,25 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @idate.title
+p
+  strong
+    | Description:
+  = @idate.description
+p
+  strong
+    | Start date:
+  = @idate.start_date
+p
+  strong
+    | Start date:
+  = @idate.user.email
+p
+  strong
+    | Ending date:
+  = @idate.ending_date
+= link_to 'Edit', edit_idate_path(@idate)
+|  | 
+= link_to 'Back', idates_path

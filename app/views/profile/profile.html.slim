@@ -1,0 +1,27 @@
+= Date.today.month
+table.ui.celled.table
+  thead
+    tr
+      th stats
+      th Title
+      th Date
+      th ending Time
+
+  tbody
+    -current_user.idates.months.each do |idate|
+    	tr
+    		- if idate.start_date.day <= Date.today.day && idate.ending_date.day >= Date.today.day
+    	   		td It is in process
+    	   	- elsif idate.ending_date.day >= Date.today.day
+    	   		td It is not start
+    	   	- elsif idate.ending_date.day < Date.today.day
+    	   		td It is done
+      		td =link_to idate.title
+      		td =idate.start_date.strftime("%m-%d")
+      		td =idate.ending_date.strftime("%m-%d")
+  tfoot
+    tr
+      th
+      th
+      th
+      th

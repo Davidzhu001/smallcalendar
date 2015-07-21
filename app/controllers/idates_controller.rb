@@ -25,7 +25,8 @@ class IdatesController < ApplicationController
   # POST /idates
   # POST /idates.json
   def create
-    @idate = Idate.new(idate_params)
+    @idate = current_user.idates.new(idate_params)
+    @idate.user = current_user
 
     respond_to do |format|
       if @idate.save

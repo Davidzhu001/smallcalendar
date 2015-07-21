@@ -1,0 +1,10 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      =link_to "Calendar4All", root_path, class: "navbar-brand"
+    div
+      ul.nav.navbar-nav
+        li.active
+          =link_to "Month", months_path
+        li
+           =link_to "Create New Events", new_idate_path

@@ -2,7 +2,6 @@ module IdatesHelper
   def calendar(date = Date.today, &block)
     Calendar.new(self, date, block).table
   end
-
   class Calendar < Struct.new(:view, :date, :callback)
     HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
     START_DAY = :sunday
@@ -10,7 +9,7 @@ module IdatesHelper
     delegate :content_tag, to: :view
 
     def table
-      content_tag :table, class: "calendar" do
+      content_tag :table, class: "calendar ui inverted brown table" do
         header + week_rows
       end
     end

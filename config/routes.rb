@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'profile/profile', as: :months
+
+  devise_for :users
   resources :idates
   root 'idates#index'
   # The priority is based upon order of creation: first created -> highest priority.

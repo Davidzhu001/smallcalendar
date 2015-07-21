@@ -1,37 +1,94 @@
+
+@import "semantic-ui";
+@import "bootstrap";
+$bgDefault      : #20B2AA;
+$bgHighlight    : #EEE8AA;
+$colDefault     : #EEE8AA;
+$colHighlight       : #CD853F;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus { 
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+body {
+}
+.divlayout{
+  padding-left: 40px;
+}
+.nav.navbar.navbar-default {
+  
+}
 #idates .calendar {
-  border-collapse: collapse;
-  width: 100%;
 
   td, th {
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
     font-size: 10px;
     padding: 6px;
-    border: 1px solid #999;
+    border: 1px solid #000000;
   }
-
+  a { color: #4B0082; }
   th {
-    background: #DDD;
-    color: #666;
     text-align: center;
+    background-color: #A52A2A;
     width: 14.2857142857143%;
   }
 
   td {
-    background: #FFF;
-    color: #777;
-    height: 80px;
+    height: 110px;
     vertical-align: top;
-    font-size: 16px;
+    font-size: 12px;
   }
 
-  .notmonth, .notmonth a { color: #CCC; }
-  .today { background-color: #D7F2FF; }
+  .notmonth, .notmonth a { color: #4B0082; }
+  .today { background-color: #808080; }
 }
 
 #idates #month {
   margin: 0;
+  padding-left: 400px;
   padding-bottom: 10px;
-  text-align: center;
   font-size: 22px;
   a {
     text-decoration: none;
@@ -44,3 +101,7 @@
   font-size: 11px;
   padding-left: 20px;
 }
+
+.wrap {
+  width:1200px;
+    }

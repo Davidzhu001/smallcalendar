@@ -30,6 +30,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'devise'
+gem 'sweet-alert-confirm'
+
+gem 'will_paginate', '~> 3.0.6'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'html2slim'
+gem 'slim'
+gem "font-awesome-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
