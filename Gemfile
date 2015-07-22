@@ -39,7 +39,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'html2slim'
 gem 'slim'
 gem "font-awesome-rails"
-
+gem 'devise-bootstrap-views'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
