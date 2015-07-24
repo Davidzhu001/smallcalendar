@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'sweet-alert-confirm'
 
 gem 'will_paginate', '~> 3.0.6'
@@ -39,7 +40,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'html2slim'
 gem 'slim'
 gem "font-awesome-rails"
-gem 'devise-bootstrap-views'
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
