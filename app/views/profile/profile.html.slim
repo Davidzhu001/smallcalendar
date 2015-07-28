@@ -1,27 +1,60 @@
-= Date.today.month
-table.ui.celled.table
-  thead
-    tr
-      th stats
-      th Title
-      th Date
-      th ending Time
+.col-xs-6
+  .panel.panel-danger
+    .panel-heading
+      h4 = @date.strftime("%d %B %Y")
+    table.table
+      thead 
+        tr
+          th stats
+          th Title
+          th Date
+          th ending Time
 
-  tbody
-    -current_user.idates.months.each do |idate|
-    	tr
-    		- if idate.start_date.day <= Date.today.day && idate.ending_date.day >= Date.today.day
-    	   		td It is in process
-    	   	- elsif idate.ending_date.day >= Date.today.day
-    	   		td It is not start
-    	   	- elsif idate.ending_date.day < Date.today.day
-    	   		td It is done
-      		td =link_to idate.title
-      		td =idate.start_date.strftime("%m-%d")
-      		td =idate.ending_date.strftime("%m-%d")
-  tfoot
-    tr
-      th
-      th
-      th
-      th
+      tbody
+        -current_user.idates.months.each do |idate|
+          tr
+            - if idate.start_date.day <= Date.today.day && idate.ending_date.day >= Date.today.day
+              td <i class="fa fa-star fa-lg"></i> Process
+              td =link_to idate.title, idate
+              td =idate.start_date.strftime("%B-%d")
+              td =idate.ending_date.strftime("%B-%d")
+.col-xs-6
+  .panel.panel-danger
+    .panel-heading
+      h4 = @date.strftime("%d %B %Y")
+    table.table
+      thead 
+        tr
+          th stats
+          th Title
+          th Date
+          th ending Time
+
+      tbody
+        -current_user.idates.months.each do |idate|
+          tr
+            - if idate.start_date.day >= Date.today.day
+              td <i class="fa fa-star fa-lg"></i> Future
+              td =link_to idate.title
+              td =idate.start_date.strftime("%B-%d")
+              td =idate.ending_date.strftime("%B-%d")
+.col-xs-7.col-xs-offset-2
+  .panel.panel-primary
+    .panel-heading
+      h4 = @date.strftime("%d %B %Y")
+    table.table
+      thead 
+        tr
+          th stats
+          th Title
+          th Date
+          th ending Time
+
+      tbody
+        -current_user.idates.months.each do |idate|
+          tr
+            - if idate.ending_date.day <= Date.today.day
+              td <i class="fa fa-star fa-lg"></i> Done
+              td =link_to idate.title, idate
+              td =idate.start_date.strftime("%B-%d")
+              td =idate.ending_date.strftime("%B-%d")
