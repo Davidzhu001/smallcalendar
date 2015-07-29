@@ -9,7 +9,7 @@ module IdatesHelper
     delegate :content_tag, to: :view
 
     def table
-      content_tag :table, class: "calendar ui inverted brown table" do
+      content_tag :table, class: "calendar ui table" do
         header + week_rows
       end
     end

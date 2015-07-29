@@ -1,3 +1,19 @@
+My canlendar
+.row
+  .col-md-12
+    #calendar
+      #idates
+        #month
+          = link_to "<", date: @date.prev_month
+          = @date.strftime("%B %Y")
+          = link_to ">", date: @date.next_month
+        = calendar @date do |date|
+          = date.day
+          - if current_user.idates.between(date)
+              - current_user.idates.dating(date).each do |idate|
+                p
+                  = link_to idate.title, idate, class: "h6"
+        br
 .col-xs-6
   .panel.panel-danger
     .panel-heading
