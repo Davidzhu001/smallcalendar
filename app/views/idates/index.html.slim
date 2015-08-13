@@ -17,6 +17,7 @@
     hr
     hr
     =link_to "New", new_idate_path, class: "ui button red"
+    hr
     H4 You event's
     table.ui.selectable.inverted.brown.table
         thead
@@ -27,22 +28,21 @@
         tbody
           -current_user.idates.each do |idate|
             tr
-              - if idate.ending_date.day >= Date.today.day
+              - if idate.ending_date >= Date.today
                 td = link_to idate.title, idate, class: "h5"
                 td = link_to idate.start_date.strftime("%B %d"), idate, class: "h6 text-white"
                 td = link_to idate.ending_date.strftime("%B %d"), idate, class: "h6"
     H4 You comming event's
-    table.ui.selectable.inverted.red.table
+    table.ui.selectable.table
         thead
           tr
             th name
             th start Time
         tbody
-          -current_user.idates.each do |idate|
+          -current_user.idates.upcoming.each do |idate|
             tr
-              - if idate.start_date > Date.today
-                td = link_to idate.title, idate, class: "h5"
-                td = idate.start_date.strftime("%B %d")
+              td = link_to idate.title, idate, class: "h5"
+              td = idate.start_date.strftime("%B %d")
     H4 You finished event's
     table.ui.selectable.inverted.brown.table
         thead
@@ -52,7 +52,7 @@
         tbody
           -current_user.idates.each do |idate|
             tr
-              - if idate.ending_date.day <= Date.today.day
+              - if idate.ending_date.day >= Date.today.day
                 td = link_to idate.title, idate, class: "h5"
                 td = idate.ending_date.strftime("%B %d")
         

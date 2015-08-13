@@ -1,6 +1,8 @@
 class Idate < ActiveRecord::Base
 	belongs_to :user
 
+    scope :upcoming, -> { where(start_date: Date.today) }
+
 	def self.between(start_time)
       where('starts_at > :start_date and starts_at < :ending_date')
     end
